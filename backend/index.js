@@ -1,19 +1,19 @@
-//console.log('Hola mundo')
+console.log('hola mundo')
+const express = require('express')
+const cors = require('cors')
+const app = express()
+app.use(cors());//habilitar cors para todas las solicitudes
 
-const express = require('express');
-const req = require('express/lib/request');
-const server = express()
-
-server.get('/', function (req, res) {
+app.get('/', function (req, res) {
   res.send('Hello World')
 })
 
-server.get('/ping', (req, res) => {
-    res.status(200).json(
+app.get('/ping', (req, res) => {
+    res.status(200).json( 
         {
             message: 'pong'
         }
     )
-})
+  })
 
-server.listen(3000)
+app.listen(3000)
